@@ -11,7 +11,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.integer :age
       t.date :birth_date
-      t.boolean :optin
+      t.boolean :optin, :default => false
 
       t.timestamps
     end
