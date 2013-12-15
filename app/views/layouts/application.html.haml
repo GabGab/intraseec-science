@@ -1,0 +1,28 @@
+!!! 5
+%html{:lang => 'fr', 'xmlns:fb' => "https://www.facebook.com/2008/fbml"}
+  %head
+    %title= "Intraseec Cité des Sciences"
+    %meta{:name => "viewport",  :content => "width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes"}
+
+    = stylesheet_link_tag 'application', :media => "all"
+    = javascript_include_tag 'application'
+    = csrf_meta_tag
+
+    :javascript
+      AppSettings = {
+        appId: "#{Facebook::APP_ID}",
+        channelUrl: "<%= URI.join(root_url, 'public', 'channel.html').to_s %>"
+      };
+  %body{:class => "#{controller.controller_name}_#{controller.action_name}"}
+    %div.application-container
+      %div.header
+      %div.app-body
+        = yield
+      %div.footer
+        %p
+          Conception et Réalisation : 
+          = link_to "Intraseec & Vincent Gabou", "http://wwww.intraseec.com", :target => "_blank"
+          \ - 
+          = link_to "Règlement", I18n.t('links.rules'), :target => "_blank"
+        %p
+          Cette promotion n'est pas gérée ou parainée par Facebook. Les informations que vous communiquez sont fournies à La Cité des Sciences et non à Facebook. Les informations que vous fournissez ne seront utilisées que pour vous contacter dans le cadre du concours.

@@ -1,0 +1,39 @@
+%p#notice= notice
+
+%p
+  %b Uid:
+  = @user.uid
+%p
+  %b Access token:
+  = @user.access_token
+%p
+  %b Expire:
+  = @user.expire
+%p
+  %b Q1:
+  = @user.q1
+%p
+  %b Q2:
+  = @user.q2
+%p
+  %b Q3:
+  = @user.q3
+%p
+  %b Masters:
+  = @user.masters
+%p
+  %b Email:
+  = @user.email
+%p
+  %b Age:
+  = @user.age
+%p
+  %b Birth date:
+  = @user.birth_date
+%p
+  %b Optin:
+  = @user.optin
+
+= link_to 'Edit', edit_user_path(@user)
+\|
+= link_to 'Back', users_path
