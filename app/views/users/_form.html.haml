@@ -51,4 +51,4 @@
       = f.check_box :optin, :checked => true
       = f.label :optin, t('users.attributes.optin')
     .actions.submit-field
-      = f.submit t('form.submit'), :class => "button"
+      = f.submit t('form.submit'), "data-require-login" => "1", :class => "button"
