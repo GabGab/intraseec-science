@@ -1,0 +1,6 @@
+%p.how-to-goal= t('fan_gate.goal')
+%p.how-to= t('fan_gate.become_fan')
+%p.kisses= t('fan_gate.kisses')
+%div.like-button
+  = image_tag "arrow.png", :class => "arrow"
+  %div{ :class => "fb-like", "data-href" => Facebook::PAGE_URL, "data-width" => "200", "data-height" => "35", "data-colorscheme" => "light", "data-layout" => "standard", "data-action" => "like", "data-show-faces" => "true", "data-send" => "false" }

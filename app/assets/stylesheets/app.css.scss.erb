@@ -1,0 +1,352 @@
+$red: #ae2121;
+$darkred: #891313;
+
+@import "bourbon";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+@font-face {
+    font-family: 'bebas_neueregular';
+    src: font-url('bebas_neue/bebasneue-webfont.eot');
+    src: font-url('bebas_neue/bebasneue-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('bebas_neue/bebasneue-webfont.woff') format('woff'),
+         font-url('bebas_neue/bebasneue-webfont.ttf') format('truetype'),
+         font-url('bebas_neue/bebasneue-webfont.svg#bebas_neueregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin reset{
+  margin: 0;
+  padding: 0;
+}
+
+@mixin font{
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-family: 'bebas_neueregular', Helvetica, Arial, sans-serif;
+}
+
+body, h1, h2, h3, h4, button, select, input, textarea{
+  @include font;
+}
+
+body {
+  @include reset;
+}
+
+ul{
+  list-style-type: none;
+  @include reset;
+}
+
+p {
+  line-height: 0.9;
+}
+
+pre {
+  webkit-overflow-scrolling: touch;
+}
+
+html{
+  height: 100%;
+}
+
+.app-container {
+  width: 800px;
+  margin: 0 auto;
+  background-color: $red;
+}
+
+// ==========
+// = Header =
+// ==========
+.header {
+  z-index: 2;
+  position: relative;
+  height: 189px;
+}
+
+h2, h3, h4 {
+  text-transform: uppercase;
+  line-height: 1;
+  font-weight: normal;
+}
+
+h1 img {
+  float: left;
+  padding: 0 40px 0 0;
+}
+
+h2 {
+  padding-top: 35px;
+  font-size: 48px;
+  color: $darkred;
+}
+
+h3 {
+  font-size: 38px;
+  color: white;
+}
+
+h4 {
+  display: inline-block;
+  text-align: justify;
+  padding-bottom: 5px;
+  font-size: 22px;
+  color: $darkred;
+  border-bottom: 2px solid white;
+}
+
+// ========
+// = Body =
+// ========
+.app-body {
+  width: 700px;
+  min-height: 310px;
+  margin: 0 60px 25px 20px;
+  background: white;
+}
+
+.painting {
+  float: left;
+  margin: -20px 25px 0 0;
+  background-color: $red;
+}
+
+.visit_link {
+  margin-left: 20px;
+}
+
+// ========
+// = Form =
+// ========
+form {
+  padding-top: 10px;
+  font-family: "Helvetica", sans-serif;
+
+  input[type="text"] {
+    padding: 5px;
+    border: 1px solid #bababa;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    vertical-align: baseline;
+  }
+
+  label {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $red;
+  }
+
+  .field {
+    padding: 5px 0;
+  }
+
+  .radio-button-field label {
+    font-size: 13px;
+    font-weight: normal;
+    text-transform: capitalize;
+    color: black;
+    cursor: pointer;
+  }
+
+  .regular-fields {
+    padding: 10px 20px 10px 10px;
+  }
+
+  .last-name-field,
+  .first-name-field {
+
+    label {
+      line-height: 2;
+    }
+
+    input {
+      float: right;
+      width: 300px;
+    }
+  }
+
+  .masters-field-container input {
+    width: 384px;
+  }
+
+  .submit-field {
+    text-align: center;
+  }
+
+  input[type="submit"] {
+    padding: 7px 100px;
+  }
+}
+
+// ==========
+// = Button =
+// ==========
+.button {
+  @include font;
+  font-size: 27px;
+  font-weight: bold;
+  color: white;
+  background-color: $darkred;
+  border: none;
+}
+
+// ==========
+// = Errors =
+// ==========
+.object-errors {
+  padding: 5px 0;
+  background-color: #d19898;
+  border-top: 1px solid $darkred;
+  border-bottom: 1px solid $darkred;
+
+  li {
+    color: $red;
+  }
+}
+// ============
+// = Fan Gate =
+// ============
+.sessions_create {
+  .painting {
+    padding: 0;
+  }
+}
+
+.how-to-goal {
+  margin: 0;
+  padding-top: 10px;
+  font-size: 36px;
+  color: $darkred;
+}
+
+.how-to {
+  font-size: 48px;
+  color: $red;
+}
+
+.kisses {
+  font-size: 26px;
+  color: $darkred;
+}
+
+.like-button {
+  padding: 20px 0;
+}
+
+.like-button .arrow {
+//  float: left;
+}
+
+.like-button .fb-like {
+  padding: 30px 0 0 20px;
+  vertical-align: middle;
+}
+
+.back-home-link {
+  font-size: 30px;
+  text-decoration: underline;
+  color: $red;
+}
+
+// ==============
+// = Users#Show =
+// ==============
+.thanks {
+  padding-top: 100px;
+  font-size: 36px;
+  color: $darkred;
+}
+// ==========
+// = Footer =
+// ==========
+
+.footer {
+  margin: 20px auto 0 auto;
+  padding: 5px 20px;
+  font-size: 16px;
+  background-color: white;
+}
+
+.footer a {
+  margin: 0 5px;
+  text-decoration: none;
+  color: black;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.footer p {
+  margin: 0 10px;
+  @include inline-block;
+  color: #b4b4b4;
+}
+
+/* ========== */
+/* = Popups = */
+/* ========== */
+.popup-background {
+  position:fixed;
+  height:100%;
+  width:100%;
+  top:0;
+  left:0;
+  background:rgba(0,0,0,0.7);
+  z-index:1;
+}
+
+.popup {
+  z-index:2;
+  position:fixed;
+  top: 270px;
+  left: 210px;
+  width: 400px;
+  height: 300px;
+  background: url(image-path('popup_background.png'));
+  border:2px solid #cecece;
+
+  .popup-header {
+    height: 190px;
+    text-align: center;
+
+    h2 {
+      width: 80%;
+      margin: 16px auto 0px auto;
+      color: white;
+    }
+  }
+
+  .popup-body {
+    height: 60px;
+    padding: 0 10px;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  .popup-footer {
+    text-align: right;
+    padding-right: 10px;
+  }
+}
+
+#requires-fan-popup {
+  .popup-header {
+    h2 {
+      width: 70%;
+    }
+  }
+
+  .popup-body {
+    text-align: center;
+
+    .fb-like {
+      margin-top: 25px;
+    }
+  }
+}

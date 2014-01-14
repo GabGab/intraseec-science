@@ -1,0 +1,9 @@
+%div{ :id => "user-denied-popup", :class => "popup", :style => "display: none;" }
+  %div{ :class => "popup-header" }
+    %h2= t('popup.user_denied.title')
+  %div{ :class => "popup-body" }
+    = t('popup.user_denied.message')
+  %div{ :class => "popup-footer" }
+    %button{ :class => "popup-close-button btn btn-primary", :type => "button", "data-toggle-popup" => "userDenied" }
+      = t('popup.close')
+%div{ :id => "user-denied-popup-background", :class => "popup-background", :style => "display: none;" }

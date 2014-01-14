@@ -1,0 +1,20 @@
+development:
+  secret: 67def1cde8356e4a4df5500da82ef41f
+  app_id: 410047012350929
+  page_id: 293080470785802
+  page_url: http://www.facebook.com/youyouxpage
+  adapter: koala
+
+test:
+  secret: ccccd5bf902b0e215d54cf4e7f953714
+  app_id: 158411747640460
+  page_id: 395206173879235
+  page_url: http://www.facebook.com/intraseec
+  adapter: koala
+
+production:
+  secret: 67def1cde8356e4a4df5500da82ef41f
+  app_id: 410047012350929
+  page_id: 293080470785802
+  page_url: http://www.facebook.com/youyouxpage
+  adapter: koala

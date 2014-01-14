@@ -1,43 +1,54 @@
 = form_for @user do |f|
-  - if @user.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
-      %ul
-        - @user.errors.full_messages.each do |msg|
-          %li= msg
-
-  .field
-    = f.label :uid
-    = f.text_field :uid
-  .field
-    = f.label :access_token
-    = f.text_field :access_token
-  .field
-    = f.label :expire
-    = f.number_field :expire
-  .field
-    = f.label :q1
-    = f.number_field :q1
-  .field
-    = f.label :q2
-    = f.number_field :q2
-  .field
-    = f.label :q3
-    = f.number_field :q3
-  .field
-    = f.label :masters
-    = f.text_field :masters
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :age
-    = f.number_field :age
-  .field
-    = f.label :birth_date
-    = f.date_select :birth_date
-  .field
-    = f.label :optin
-    = f.check_box :optin
-  .actions
-    = f.submit 'Save'
+  = error_messages_for(@user)
+  %div.field.q1-field
+    = f.label :q1, t('form.q1.label'), :class => "question-label"
+    %p= t('form.q1.question')
+    %div.radio-button-field
+      = f.radio_button :q1, 0
+      = f.label "q1_0", t('form.q1.answer_1')
+    %div.radio-button-field
+      = f.radio_button :q1, 1
+      = f.label "q1_1", t('form.q1.answer_2')
+    %div.radio-button-field
+      = f.radio_button :q1, 2
+      = f.label "q1_2", t('form.q1.answer_3')
+  .field.q2-field
+    = f.label :q2, t('form.q2.label'), :class => "question-label"
+    %p= t('form.q2.question')
+    %div.radio-button-field
+      = f.radio_button :q2, 0
+      = f.label "q2_0", t('form.q2.answer_1')
+    %div.radio-button-field
+      = f.radio_button :q2, 1
+      = f.label "q2_1", t('form.q2.answer_2')
+    %div.radio-button-field
+      = f.radio_button :q2, 2
+      = f.label "q2_2", t('form.q2.answer_3')
+  .field.q3-field
+    = f.label :q3, t('form.q3.label'), :class => "question-label"
+    %p= t('form.q3.question')
+    %div.radio-button-field
+      = f.radio_button :q3, 0
+      = f.label "q3_0", t('form.q3.answer_1')
+    %div.radio-button-field
+      = f.radio_button :q3, 1
+      = f.label "q3_1", t('form.q3.answer_2')
+    %div.radio-button-field
+      = f.radio_button :q3, 2
+      = f.label "q3_2", t('form.q3.answer_3')
+  .regular-fields
+    %p.require_info= t('form.require_info')
+    .field.last-name-field
+      = f.label :last_name, t('users.attributes.last_name')
+      = f.text_field :last_name
+    .field.first-name-field
+      = f.label :first_name, t('users.attributes.first_name')
+      = f.text_field :first_name
+    .field.masters-field
+      = f.label :masters, t('users.attributes.masters')
+      %p.masters-field-container= f.text_field :masters
+    .field.optin-field
+      = f.check_box :optin, :checked => true
+      = f.label :optin, t('users.attributes.optin')
+    .actions.submit-field
+      = f.submit t('form.submit'), :class => "button"

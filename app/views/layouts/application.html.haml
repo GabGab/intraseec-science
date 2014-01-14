@@ -11,18 +11,24 @@
     :javascript
       AppSettings = {
         appId: "#{Facebook::APP_ID}",
-        channelUrl: "<%= URI.join(root_url, 'public', 'channel.html').to_s %>"
+        channelUrl: "<%= URI.join(root_url, 'public', 'channel.html').to_s %>",
+        pageTabUrl: "#{Facebook::PAGE_URL}?sk=app_#{Facebook::APP_ID}"
       };
   %body{:class => "#{controller.controller_name}_#{controller.action_name}"}
-    %div.application-container
+    %div.app-container
       %div.header
+        %h1= image_tag("logo.png", :class => "logo", :alt => "Logo de la Cité des Sciences et de l'Industrie")
+        %h2= t('header.subtitle')
+        %h3= t('header.price')
+        %h4= t('header.partners').html_safe
       %div.app-body
+        = image_tag("painting.jpg", :class => "painting", :alt => "Affiche de l'exposition Jeu Vidéo à la Cité des Sciences")
         = yield
+      = link_to image_tag("visit_image.png"), t('links.expo_url'), :class => "visit_link", :target => "_blank"
       %div.footer
-        %p
-          Conception et Réalisation : 
-          = link_to "Intraseec & Vincent Gabou", "http://wwww.intraseec.com", :target => "_blank"
-          \ - 
-          = link_to "Règlement", I18n.t('links.rules'), :target => "_blank"
-        %p
-          Cette promotion n'est pas gérée ou parainée par Facebook. Les informations que vous communiquez sont fournies à La Cité des Sciences et non à Facebook. Les informations que vous fournissez ne seront utilisées que pour vous contacter dans le cadre du concours.
+        = link_to t('footer.legal_info'), "#", :target => "_blank", :class => "footer-link legal-info"
+        = link_to t('footer.cgu'), "#", :target => "_blank", :class => "footer-link cgu"
+        %p.partner= t('footer.partner')
+        %p.master= t('footer.master')
+    = render :partial => "shared/user_denied_popup"
+    
