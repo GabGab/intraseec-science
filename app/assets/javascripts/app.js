@@ -59,5 +59,5 @@ function toggleRequiresFanPopup() {
 function computePaintingPadding() {
   var formHeight = $('form').outerHeight(true);
   var painting = $('.painting');
-  painting.css('padding-bottom', formHeight - (painting.height() - 20));
+  painting.css('padding-bottom', formHeight - (painting.height() - 33));
 }

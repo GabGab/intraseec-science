@@ -44,6 +44,9 @@
     .field.first-name-field
       = f.label :first_name, t('users.attributes.first_name')
       = f.text_field :first_name
+    .field.email-field
+      = f.label :email, t('users.attributes.email')
+      = f.text_field :email
     .field.masters-field
       = f.label :masters, t('users.attributes.masters')
       %p.masters-field-container= f.text_field :masters
@@ -51,4 +54,4 @@
       = f.check_box :optin, :checked => true
       = f.label :optin, t('users.attributes.optin')
     .actions.submit-field
-      = f.submit t('form.submit'), "data-require-login" => "1", :class => "button"
+      = f.submit t('form.submit'), "data-require-login" => true, :class => "button"

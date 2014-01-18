@@ -50,7 +50,7 @@ fr:
   popup:
     user_denied:
       title: "Oh non !"
-      message: "Vosu devez accepter l'application afin de pouvoir participer au concours"
+      message: "Vous devez accepter l'application afin de pouvoir participer au concours"
   date:
     abbr_day_names:
       - dim
