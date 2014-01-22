@@ -54,6 +54,7 @@ class SessionsController < ApplicationController
       if !response["page"]["liked"]
         render "users/fan_gate"
       else
+        raise response.inspect
         if response['oauth_token']
           session[:expires_in] = response['expires'] == 0 ? 0 : Time.now.to_i + response['expires'].to_i
           session[:uid] = response['user_id']
