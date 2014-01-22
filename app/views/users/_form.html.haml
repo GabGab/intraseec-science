@@ -1,5 +1,6 @@
 = form_for @user do |f|
   = error_messages_for(@user)
+  %div= @response
   %div.field.q1-field
     = f.label :q1, t('form.q1.label'), :class => "question-label"
     %p= t('form.q1.question')
