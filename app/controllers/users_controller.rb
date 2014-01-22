@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @success = @user.has_correct_answers?
   end
 
   # GET /users/new

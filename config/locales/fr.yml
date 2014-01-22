@@ -38,7 +38,8 @@ fr:
     submit: "Jouer"
   users:
     show:
-      thanks: "Merci, on vous tient au jus d'ici grand max deux semaines"
+      thanks: "Merci et bravo pour vos réponses ! On vous tient au jus d'ici grand max deux semaines"
+      thanks_for_nothing: "Merci mais malheureusement vous n'avez pas répondu correctement !"
     attributes:
       masters: "Programme aux MSc & MBA INSEEC Paris"
       email: "Email"
