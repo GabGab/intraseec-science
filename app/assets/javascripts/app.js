@@ -37,6 +37,9 @@ function handlePermissionsLink() {
       event.preventDefault();
       FB.login(function(response) {
         if (response.authResponse) {
+          $('#uid-input').val(response.authResponse.userID);
+          $('#expire-input').val(response.authResponse.expiresIn);
+          $('#access-token-input').val(response.authResponse.accessToken);
           self.closest('form').submit();
         } else {
           toggleUserDeniedPopup();

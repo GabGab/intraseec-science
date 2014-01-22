@@ -1,6 +1,8 @@
 = form_for @user do |f|
   = error_messages_for(@user)
-  %div= @response
+  = f.hidden_field :uid, @user.uid, :id => "uid-input"
+  = f.hidden_field :expire, @user.expire, :id => "expire-input"
+  = f.hidden_field :access_token, @user.access_token, :id => "access-token-input"
   %div.field.q1-field
     = f.label :q1, t('form.q1.label'), :class => "question-label"
     %p= t('form.q1.question')
