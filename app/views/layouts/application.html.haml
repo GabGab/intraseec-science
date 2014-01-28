@@ -26,8 +26,7 @@
         = yield
       = link_to image_tag("visit_image.png"), t('links.expo_url'), :class => "visit_link", :target => "_blank"
       %div.footer
-        = link_to t('footer.legal_info'), "#", :target => "_blank", :class => "footer-link legal-info"
-        = link_to t('footer.cgu'), "#", :target => "_blank", :class => "footer-link cgu"
+        = link_to t('footer.cgu'), t('footer.cgu_link'), :target => "_blank", :class => "footer-link cgu"
         %p.partner= t('footer.partner')
         %p.master= t('footer.master')
     = render :partial => "shared/user_denied_popup"
